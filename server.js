@@ -10,11 +10,8 @@ const profile = require('./controllers/profile');
 const db=knex({
     client: 'pg',
     connection: {
-      host : 'postgresql-amorphous-91185',
-      port : 5432,
-      user : 'postgres',
-      password : 'test',
-      database : 'smart-brain'
+      host : process.env.DATABASE_URL,
+      ssl: true
     }
   });
 
